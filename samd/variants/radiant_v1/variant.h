@@ -6,7 +6,8 @@
 #define VARIANT_MCK			  (48000000ul)
 #define VARIANT_MAINOSC		(32768ul)
 #define CRYSTALLESS
-#define VERY_LOW_POWER
+// no idea what this does, but I got rid of it in the V2?
+//#define VERY_LOW_POWER
 
 #include "WVariant.h"
 
@@ -61,16 +62,16 @@ static const uint8_t A4 = 21; // RQ
   // Serial1 (SERCOM0) is the FPGA. PA11 = RX, PA10 = TX.
 #define PIN_SERIAL1_RX (42u)
 #define PIN_SERIAL1_TX (41u)
-#define PAD_SERIAL_TX (UART_TX_PAD_2)
-#define PAD_SERIAL_RX (SERCOM_RX_PAD_3)
+#define PAD_SERIAL1_TX (UART_TX_PAD_2)
+#define PAD_SERIAL1_RX (SERCOM_RX_PAD_3)
 #define PERIPH_SERIAL1 sercom0
 #define SERIAL1_IT_HANDLER SERCOM0_Handler
 
   // Serial2 (SERCOM3) is the debug RX/TX (test points only) PA17 = RX, PA18 = TX.
 #define PIN_SERIAL2_RX (45u)
 #define PIN_SERIAL2_TX (32u)
-#define PAD_SERIAL_TX (UART_TX_PAD_0)
-#define PAD_SERIAL_RX (SERCOM_RX_PAD_1)
+#define PAD_SERIAL2_TX (UART_TX_PAD_0)
+#define PAD_SERIAL2_RX (SERCOM_RX_PAD_1)
 #define PERIPH_SERIAL2 sercom3
 #define SERIAL2_IT_HANDLER SERCOM3_Handler
 
